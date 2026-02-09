@@ -90,10 +90,10 @@ export function DataManagement() {
           variant="outline"
           size="sm"
           disabled={isImporting}
-          className="text-xs"
+          className="text-xs flex items-center justify-center"
           asChild
         >
-          <span>
+          <span className="flex items-center">
             <Upload className="w-3 h-3 mr-2" />
             {isImporting ? '导入中... Importing' : '导入备份 Import'}
           </span>
