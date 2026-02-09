@@ -69,14 +69,14 @@ export default function Tracker() {
     <div className="min-h-screen bg-background">
       {/* 顶部导航 */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
-        <div className="container py-6 flex items-center justify-between">
+        <div className="container py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-medium text-foreground">英国永居离境追踪 <span className="text-sm text-muted-foreground">UK ILR Tracker</span></h1>
             <p className="text-sm text-muted-foreground mt-1">
               {config.visaType === '5-year' ? '5 年永居路线 (5-Year Route)' : '10 年长期居住路线 (10-Year Route)'}
             </p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <DateRangeDialog />
             <DataManagement />
             <Button

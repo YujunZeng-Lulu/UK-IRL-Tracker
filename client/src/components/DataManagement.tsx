@@ -67,7 +67,7 @@ export function DataManagement() {
   };
 
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
       <Button
         variant="outline"
         size="sm"
