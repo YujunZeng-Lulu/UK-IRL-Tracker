@@ -1,18 +1,25 @@
 /**
- * 日本极简主义 - 应用状态管理
- * 使用 React Context 管理全局状态
+ * 日本极简主义 - 应用上下文
+ * 管理全局状态和本地存储
  */
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import type { UserConfig, AppState } from '@/../../shared/types';
-import { loadAppState, saveConfig, saveDepartures, markInitialized } from '@/lib/storage';
+import { createContext, useContext, useState, ReactNode } from 'react';
+import {
+  loadAppState,
+  saveConfig,
+  saveDepartures,
+  markInitialized,
+  clearAllData,
+} from '@/lib/storage';
+import type { AppState, UserConfig } from '@/../../shared/types';
 
 interface AppContextType {
   state: AppState;
   updateConfig: (config: UserConfig) => void;
   toggleDeparture: (date: string) => void;
+  batchToggleDepartures: (dates: string[]) => void;
   initialize: () => void;
-  resetApp: () => void;
+  reset: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -40,24 +47,43 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setState(prev => ({ ...prev, departures: newDepartures }));
   };
 
+  // 批量切换离境状态
+  const batchToggleDepartures = (dates: string[]) => {
+    const newDepartures = { ...state.departures };
+    
+    dates.forEach(date => {
+      if (!newDepartures[date]) {
+        newDepartures[date] = true;
+      }
+    });
+    
+    saveDepartures(newDepartures);
+    setState(prev => ({ ...prev, departures: newDepartures }));
+  };
+
   // 标记初始化完成
   const initialize = () => {
     markInitialized();
-    setState(prev => ({ ...prev, isInitialized: true }));
+    setState(prev => ({ ...prev, initialized: true }));
   };
 
-  // 重置应用
-  const resetApp = () => {
-    localStorage.clear();
-    setState({
-      config: null,
-      departures: {},
-      isInitialized: false
-    });
+  // 重置所有数据
+  const reset = () => {
+    clearAllData();
+    setState(loadAppState());
   };
 
   return (
-    <AppContext.Provider value={{ state, updateConfig, toggleDeparture, initialize, resetApp }}>
+    <AppContext.Provider
+      value={{
+        state,
+        updateConfig,
+        toggleDeparture,
+        batchToggleDepartures,
+        initialize,
+        reset,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

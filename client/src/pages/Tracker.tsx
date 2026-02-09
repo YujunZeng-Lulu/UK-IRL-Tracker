@@ -9,6 +9,7 @@ import { Calendar } from '@/components/Calendar';
 import { StatsCard } from '@/components/StatsCard';
 import { DetailedStats } from '@/components/DetailedStats';
 import { DataManagement } from '@/components/DataManagement';
+import { DateRangeDialog } from '@/components/DateRangeDialog';
 import { Button } from '@/components/ui/button';
 import { 
   calculateILRStatus, 
@@ -19,7 +20,7 @@ import {
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, AlertTriangle, CheckCircle2 } from 'lucide-react';
 
 export default function Tracker() {
-  const { state, resetApp } = useApp();
+  const { state, reset: resetApp } = useApp();
   const [currentDate, setCurrentDate] = useState(new Date());
   
   const config = state.config!;
@@ -75,6 +76,7 @@ export default function Tracker() {
             </p>
           </div>
           <div className="flex items-center space-x-3">
+            <DateRangeDialog />
             <DataManagement />
             <Button
               variant="outline"
