@@ -40,15 +40,39 @@ export function AppProvider({ children }: { children: ReactNode }) {
   // 切换离境状态
   const toggleDeparture = (date: string) => {
     const newDepartures = { ...state.departures };
+    let newPeriods = [...state.departurePeriods];
     
     if (newDepartures[date]) {
+      // 取消标记:删除日期标记和对应的单日离境时间段
       delete newDepartures[date];
+      
+      // 查找并删除包含此日期的单日离境时间段
+      const periodToDelete = newPeriods.find(
+        p => p.startDate === date && p.endDate === date
+      );
+      if (periodToDelete) {
+        newPeriods = newPeriods.filter(p => p.id !== periodToDelete.id);
+      }
     } else {
+      // 标记:添加日期标记并创建单日离境时间段
       newDepartures[date] = true;
+      
+      // 创建单日离境时间段
+      const newPeriod: DeparturePeriod = {
+        id: `single-${date}-${Date.now()}`,
+        startDate: date,
+        endDate: date,
+        days: 1,
+        createdAt: new Date().toISOString(),
+      };
+      
+      newPeriods.push(newPeriod);
     }
     
+    // 一次性更新所有状态
     saveDepartures(newDepartures);
-    setState(prev => ({ ...prev, departures: newDepartures }));
+    saveDeparturePeriods(newPeriods);
+    setState(prev => ({ ...prev, departures: newDepartures, departurePeriods: newPeriods }));
   };
 
   // 批量切换离境状态
