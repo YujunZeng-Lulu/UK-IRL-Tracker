@@ -14,6 +14,15 @@ export interface DepartureRecord {
   isDeparture: boolean; // true = 离境, false = 在英国
 }
 
+// 离境时间段
+export interface DeparturePeriod {
+  id: string; // 唯一标识符
+  startDate: string; // ISO 8601 format: YYYY-MM-DD
+  endDate: string; // ISO 8601 format: YYYY-MM-DD
+  days: number; // 离境天数
+  createdAt: string; // 创建时间
+}
+
 // 滚动12个月窗口统计
 export interface Rolling12MonthStats {
   startDate: string;
@@ -43,5 +52,6 @@ export interface RecommendedDeparture {
 export interface AppState {
   config: UserConfig | null;
   departures: Record<string, boolean>; // key: YYYY-MM-DD, value: isDeparture
+  departurePeriods: DeparturePeriod[]; // 离境时间段列表
   isInitialized: boolean;
 }

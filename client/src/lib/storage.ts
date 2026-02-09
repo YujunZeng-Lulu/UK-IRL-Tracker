@@ -3,11 +3,12 @@
  * 所有数据存储在用户浏览器本地,无需服务器
  */
 
-import type { UserConfig, AppState } from '@/../../shared/types';
+import type { UserConfig, AppState, DeparturePeriod } from '@/../../shared/types';
 
 const STORAGE_KEYS = {
   CONFIG: 'ilr-tracker-config',
   DEPARTURES: 'ilr-tracker-departures',
+  PERIODS: 'ilr-tracker-periods',
   INITIALIZED: 'ilr-tracker-initialized'
 } as const;
 
@@ -74,12 +75,37 @@ export function isInitialized(): boolean {
 }
 
 /**
+ * 保存离境时间段
+ */
+export function saveDeparturePeriods(periods: DeparturePeriod[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEYS.PERIODS, JSON.stringify(periods));
+  } catch (error) {
+    console.error('Failed to save departure periods:', error);
+  }
+}
+
+/**
+ * 读取离境时间段
+ */
+export function loadDeparturePeriods(): DeparturePeriod[] {
+  try {
+    const data = localStorage.getItem(STORAGE_KEYS.PERIODS);
+    return data ? JSON.parse(data) : [];
+  } catch (error) {
+    console.error('Failed to load departure periods:', error);
+    return [];
+  }
+}
+
+/**
  * 加载完整的应用状态
  */
 export function loadAppState(): AppState {
   return {
     config: loadConfig(),
     departures: loadDepartures(),
+    departurePeriods: loadDeparturePeriods(),
     isInitialized: isInitialized()
   };
 }
@@ -114,6 +140,10 @@ export function importData(jsonStr: string): boolean {
     
     if (state.departures) {
       saveDepartures(state.departures);
+    }
+    
+    if (state.departurePeriods) {
+      saveDeparturePeriods(state.departurePeriods);
     }
     
     if (state.isInitialized) {

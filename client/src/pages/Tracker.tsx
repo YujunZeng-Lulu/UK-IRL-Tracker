@@ -10,6 +10,7 @@ import { StatsCard } from '@/components/StatsCard';
 import { DetailedStats } from '@/components/DetailedStats';
 import { DataManagement } from '@/components/DataManagement';
 import { DateRangeDialog } from '@/components/DateRangeDialog';
+import DeparturePeriodList from '@/components/DeparturePeriodList';
 import { Button } from '@/components/ui/button';
 import { 
   calculateILRStatus, 
@@ -159,9 +160,48 @@ export default function Tracker() {
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-border pb-3">
             <h2 className="text-xl font-medium">离境日期标记 <span className="text-sm text-muted-foreground">Departure Dates</span></h2>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
+              {/* 年份选择器 */}
+              <select
+                value={currentDate.getFullYear()}
+                onChange={(e) => {
+                  const newDate = new Date(currentDate);
+                  newDate.setFullYear(parseInt(e.target.value));
+                  setCurrentDate(newDate);
+                }}
+                className="px-3 py-1.5 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+              >
+                {Array.from({ length: 15 }, (_, i) => {
+                  const year = new Date().getFullYear() - 10 + i;
+                  return (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </select>
+
+              {/* 月份选择器 */}
+              <select
+                value={currentDate.getMonth()}
+                onChange={(e) => {
+                  const newDate = new Date(currentDate);
+                  newDate.setMonth(parseInt(e.target.value));
+                  setCurrentDate(newDate);
+                }}
+                className="px-3 py-1.5 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+              >
+                {Array.from({ length: 12 }, (_, i) => (
+                  <option key={i} value={i}>
+                    {i + 1} 月
+                  </option>
+                ))}
+              </select>
+
+              <div className="h-4 w-px bg-border" />
+
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
                 onClick={handlePrevMonth}
               >
@@ -171,12 +211,13 @@ export default function Tracker() {
                 variant="outline"
                 size="sm"
                 onClick={handleToday}
-                className="font-mono text-xs"
+                className="text-xs"
               >
+                <CalendarIcon className="w-3 h-3 mr-2" />
                 今天 Today
               </Button>
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
                 onClick={handleNextMonth}
               >
@@ -206,6 +247,12 @@ export default function Tracker() {
               <span>今天 (Today)</span>
             </div>
           </div>
+        </section>
+
+        {/* 离境时间段列表 */}
+        <section className="space-y-6">
+          <h2 className="text-xl font-medium border-b border-border pb-3">离境记录管理 <span className="text-sm text-muted-foreground">Departure Records Management</span></h2>
+          <DeparturePeriodList />
         </section>
 
         {/* 详细统计 */}

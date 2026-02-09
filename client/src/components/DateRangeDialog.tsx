@@ -20,7 +20,7 @@ import { toast } from 'sonner';
 import { parseDate, formatDate } from '@/lib/calculator';
 
 export function DateRangeDialog() {
-  const { state, batchToggleDepartures } = useApp();
+  const { state, addDeparturePeriod } = useApp();
   const [open, setOpen] = useState(false);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -63,22 +63,10 @@ export function DateRangeDialog() {
       return;
     }
 
-    // 批量标记
-    const datesToMark: string[] = [];
-    const current = new Date(start);
-    
-    while (current <= end) {
-      const dateStr = formatDate(current);
-      if (!state.departures[dateStr]) {
-        datesToMark.push(dateStr);
-      }
-      current.setDate(current.getDate() + 1);
-    }
+    // 添加离境时间段（会自动批量标记日期）
+    addDeparturePeriod(startDate, endDate);
 
-    // 批量添加
-    batchToggleDepartures(datesToMark);
-
-    toast.success(`已标记 ${datesToMark.length} 天为离境日期`);
+    toast.success(`已添加离境时间段 ${days} 天 (Added departure period of ${days} days)`);
     setOpen(false);
     setStartDate('');
     setEndDate('');
@@ -142,9 +130,9 @@ export function DateRangeDialog() {
 
           {startDate && endDate && parseDate(startDate) <= parseDate(endDate) && (
             <div className="p-3 bg-muted/50 border border-border text-sm text-muted-foreground">
-              将标记 <span className="font-medium text-foreground">
+              将添加离境时间段 <span className="font-medium text-foreground">
                 {Math.floor((parseDate(endDate).getTime() - parseDate(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1}
-              </span> 天为离境日期 (Will mark {Math.floor((parseDate(endDate).getTime() - parseDate(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1} days as departed)
+              </span> 天 (Will add departure period of {Math.floor((parseDate(endDate).getTime() - parseDate(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1} days)
             </div>
           )}
         </div>
