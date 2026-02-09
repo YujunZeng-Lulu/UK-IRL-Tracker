@@ -4,15 +4,24 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import { AppProvider, useApp } from "./contexts/AppContext";
+import Welcome from "./pages/Welcome";
+import Tracker from "./pages/Tracker";
 
 
 function Router() {
+  const { state } = useApp();
+  
+  // 如果未初始化,显示欢迎页面
+  if (!state.isInitialized || !state.config) {
+    return <Welcome />;
+  }
+  
+  // 已初始化,显示追踪页面
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={Tracker} />
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -26,14 +35,13 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light">
+        <AppProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </AppProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
