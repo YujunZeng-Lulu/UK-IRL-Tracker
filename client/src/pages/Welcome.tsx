@@ -43,19 +43,21 @@ export default function Welcome() {
             <h1 className="text-3xl font-medium text-foreground">
               英国永居离境追踪
             </h1>
+            <p className="text-xs text-muted-foreground mb-2">UK ILR Tracker</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               精确计算离境天数,守护您的永居资格
             </p>
+            <p className="text-xs text-muted-foreground">Track your days outside the UK for ILR eligibility</p>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-3">
-              <Label className="text-base font-normal">签证类型</Label>
+              <Label className="text-base font-normal">签证类型 <span className="text-sm text-muted-foreground">Visa Type</span></Label>
               <RadioGroup value={visaType} onValueChange={(v) => setVisaType(v as VisaType)}>
                 <div className="flex items-center space-x-3 py-2">
                   <RadioGroupItem value="5-year" id="5-year" />
                   <Label htmlFor="5-year" className="font-normal cursor-pointer">
-                    5 年永居路线
+                    5 年永居路线 (5-Year Route)
                     <span className="block text-xs text-muted-foreground mt-1">
                       Skilled Worker / Tier 2 / Global Talent
                     </span>
@@ -64,9 +66,9 @@ export default function Welcome() {
                 <div className="flex items-center space-x-3 py-2">
                   <RadioGroupItem value="10-year" id="10-year" />
                   <Label htmlFor="10-year" className="font-normal cursor-pointer">
-                    10 年长期居住路线
+                    10 年长期居住路线 (10-Year Route)
                     <span className="block text-xs text-muted-foreground mt-1">
-                      Long Residence (任意签证类型组合)
+                      Long Residence (任意签证类型组合 Any visa combination)
                     </span>
                   </Label>
                 </div>
@@ -75,7 +77,7 @@ export default function Welcome() {
 
             <div className="space-y-3">
               <Label htmlFor="arrival-date" className="text-base font-normal">
-                抵达英国日期
+                抵达英国日期 <span className="text-sm text-muted-foreground">UK Arrival Date</span>
               </Label>
               <input
                 id="arrival-date"
@@ -86,7 +88,7 @@ export default function Welcome() {
                 max={new Date().toISOString().split('T')[0]}
               />
               <p className="text-xs text-muted-foreground">
-                请输入您第一次抵达英国的日期
+                请输入您第一次抵达英国的日期 (Enter your first arrival date in the UK)
               </p>
             </div>
           </div>
@@ -97,13 +99,13 @@ export default function Welcome() {
             disabled={!arrivalDate}
             className="w-full py-6 text-base font-normal transition-all duration-500 hover:opacity-80"
           >
-            开始追踪
+            开始追踪 Start Tracking
           </Button>
 
           <div className="pt-4 border-t border-border">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
-              所有数据存储在您的浏览器本地<br />
-              无需注册,完全离线可用
+              所有数据存储在您的浏览器本地 (All data stored locally in your browser)<br />
+              无需注册,完全离线可用 (No registration, works offline)
             </p>
           </div>
         </div>

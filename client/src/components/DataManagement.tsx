@@ -25,9 +25,9 @@ export function DataManagement() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       
-      toast.success('数据导出成功');
+      toast.success('数据导出成功 (Data exported successfully)');
     } catch (error) {
-      toast.error('导出失败,请重试');
+      toast.error('导出失败,请重试 (Export failed, please retry)');
     }
   };
 
@@ -44,22 +44,22 @@ export function DataManagement() {
         const success = importData(content);
         
         if (success) {
-          toast.success('数据导入成功,页面即将刷新');
+          toast.success('数据导入成功,页面即将刷新 (Data imported successfully, page will refresh)');
           setTimeout(() => {
             window.location.reload();
           }, 1500);
         } else {
-          toast.error('导入失败,请检查文件格式');
+          toast.error('导入失败,请检查文件格式 (Import failed, please check file format)');
         }
       } catch (error) {
-        toast.error('导入失败,请检查文件格式');
+        toast.error('导入失败,请检查文件格式 (Import failed, please check file format)');
       } finally {
         setIsImporting(false);
       }
     };
     
     reader.onerror = () => {
-      toast.error('读取文件失败');
+      toast.error('读取文件失败 (Failed to read file)');
       setIsImporting(false);
     };
     
@@ -75,7 +75,7 @@ export function DataManagement() {
         className="text-xs"
       >
         <Download className="w-3 h-3 mr-2" />
-        导出备份
+        导出备份 Export
       </Button>
       
       <label className="cursor-pointer">
@@ -95,7 +95,7 @@ export function DataManagement() {
         >
           <span>
             <Upload className="w-3 h-3 mr-2" />
-            {isImporting ? '导入中...' : '导入备份'}
+            {isImporting ? '导入中... Importing' : '导入备份 Import'}
           </span>
         </Button>
       </label>

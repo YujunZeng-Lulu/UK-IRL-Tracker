@@ -70,9 +70,9 @@ export default function Tracker() {
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="container py-6 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-medium text-foreground">英国永居离境追踪</h1>
+            <h1 className="text-2xl font-medium text-foreground">英国永居离境追踪 <span className="text-sm text-muted-foreground">UK ILR Tracker</span></h1>
             <p className="text-sm text-muted-foreground mt-1">
-              {config.visaType === '5-year' ? '5 年永居路线' : '10 年长期居住路线'}
+              {config.visaType === '5-year' ? '5 年永居路线 (5-Year Route)' : '10 年长期居住路线 (10-Year Route)'}
             </p>
           </div>
           <div className="flex items-center space-x-3">
@@ -84,7 +84,7 @@ export default function Tracker() {
               onClick={resetApp}
               className="text-xs"
             >
-              重置
+              重置 Reset
             </Button>
           </div>
         </div>
@@ -95,21 +95,21 @@ export default function Tracker() {
         
         {/* 关键统计数据 */}
         <section className="space-y-6">
-          <h2 className="text-xl font-medium border-b border-border pb-3">核心数据</h2>
+          <h2 className="text-xl font-medium border-b border-border pb-3">核心数据 <span className="text-sm text-muted-foreground">Key Metrics</span></h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <StatsCard
-              title="距离永居申请"
+              title="距离永居申请 Days Until ILR"
               value={ilrStatus.daysUntilILR}
-              subtitle={ilrStatus.daysUntilILR > 0 ? `还需 ${ilrStatus.daysUntilILR} 天` : '已满足时间要求'}
+              subtitle={ilrStatus.daysUntilILR > 0 ? `还需 ${ilrStatus.daysUntilILR} 天 (${ilrStatus.daysUntilILR} days remaining)` : '已满足时间要求 (Time requirement met)'}
               status={ilrStatus.daysUntilILR > 365 ? 'safe' : ilrStatus.daysUntilILR > 0 ? 'warning' : 'safe'}
               icon={<CalendarIcon className="w-8 h-8 text-muted-foreground" />}
             />
             
             <StatsCard
-              title="当前滚动 12 个月最高离境天数"
+              title="当前滚动 12 个月最高离境天数 Max Days in Rolling 12 Months"
               value={ilrStatus.currentRollingDays}
-              subtitle={`上限 180 天,剩余 ${Math.max(0, 180 - ilrStatus.currentRollingDays)} 天`}
+              subtitle={`上限 180 天,剩余 ${Math.max(0, 180 - ilrStatus.currentRollingDays)} 天 (Limit 180, ${Math.max(0, 180 - ilrStatus.currentRollingDays)} remaining)`}
               status={
                 ilrStatus.currentRollingDays > 180 ? 'critical' :
                 ilrStatus.currentRollingDays >= 150 ? 'warning' : 'safe'
@@ -129,12 +129,14 @@ export default function Tracker() {
               'border-l-primary bg-primary/5'
             }`}>
               <p className="text-sm font-medium mb-2">
-                {mostCriticalWindow.riskLevel === 'critical' ? '⚠️ 违规警告' : '⚠️ 临界风险'}
+                {mostCriticalWindow.riskLevel === 'critical' ? '⚠️ 违规警告 (Violation Warning)' : '⚠️ 临界风险 (Critical Risk)'}
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 在 {mostCriticalWindow.startDate} 至 {mostCriticalWindow.endDate} 期间,
                 您的离境天数为 {mostCriticalWindow.departureDays} 天
-                {mostCriticalWindow.riskLevel === 'critical' && ',已超过 180 天上限'}
+                {mostCriticalWindow.riskLevel === 'critical' && ',已超过 180 天上限 (exceeded 180-day limit)'}
+                <br />
+                <span className="text-xs">During {mostCriticalWindow.startDate} to {mostCriticalWindow.endDate}, you were absent for {mostCriticalWindow.departureDays} days</span>
               </p>
             </div>
           )}
@@ -142,10 +144,12 @@ export default function Tracker() {
           {/* 推荐出境时间 */}
           {recommendation && (
             <div className="p-6 border border-secondary bg-secondary/5">
-              <p className="text-sm font-medium mb-2">💡 最优出境建议</p>
+              <p className="text-sm font-medium mb-2">💡 最优出境建议 (Optimal Departure Suggestion)</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 建议在 {recommendation.suggestedDate} 之后出境,
                 最多可离境 {recommendation.maxDuration} 天而不超过滚动 12 个月限制
+                <br />
+                <span className="text-xs">Suggested to depart after {recommendation.suggestedDate}, max {recommendation.maxDuration} days without exceeding rolling 12-month limit</span>
               </p>
             </div>
           )}
@@ -154,7 +158,7 @@ export default function Tracker() {
         {/* 日历视图 */}
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-border pb-3">
-            <h2 className="text-xl font-medium">离境日期标记</h2>
+            <h2 className="text-xl font-medium">离境日期标记 <span className="text-sm text-muted-foreground">Departure Dates</span></h2>
             <div className="flex items-center space-x-2">
               <Button
                 variant="outline"
@@ -169,7 +173,7 @@ export default function Tracker() {
                 onClick={handleToday}
                 className="font-mono text-xs"
               >
-                今天
+                今天 Today
               </Button>
               <Button
                 variant="outline"
@@ -191,22 +195,22 @@ export default function Tracker() {
           <div className="flex items-center justify-center space-x-8 text-xs text-muted-foreground">
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 bg-card border border-border" />
-              <span>在英国</span>
+              <span>在英国 (In UK)</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 bg-primary/20 border border-primary" />
-              <span>离境</span>
+              <span>离境 (Departed)</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 ring-2 ring-secondary" />
-              <span>今天</span>
+              <span>今天 (Today)</span>
             </div>
           </div>
         </section>
 
         {/* 详细统计 */}
         <section className="space-y-6">
-          <h2 className="text-xl font-medium border-b border-border pb-3">风险窗口详情</h2>
+          <h2 className="text-xl font-medium border-b border-border pb-3">风险窗口详情 <span className="text-sm text-muted-foreground">Risk Window Details</span></h2>
           <DetailedStats />
         </section>
 
@@ -215,6 +219,9 @@ export default function Tracker() {
           <p className="text-xs text-muted-foreground text-center leading-relaxed">
             本工具基于英国 Home Office 公布的通用规则进行计算,仅用于辅助判断离境天数与永居资格风险,
             不构成法律意见。最终决定权归英国移民局所有。
+            <br />
+            This tool calculates based on UK Home Office published general rules, for reference only. 
+            Does not constitute legal advice. Final decision rests with UK immigration authorities.
           </p>
         </section>
 

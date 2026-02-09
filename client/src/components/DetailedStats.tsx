@@ -24,7 +24,7 @@ export function DetailedStats() {
     return (
       <div className="p-8 text-center border border-secondary bg-secondary/5">
         <p className="text-sm text-muted-foreground">
-          ✓ 所有滚动 12 个月窗口均符合要求
+          ✓ 所有滚动 12 个月窗口均符合要求 (All rolling 12-month windows are compliant)
         </p>
       </div>
     );
@@ -33,7 +33,7 @@ export function DetailedStats() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
-        共发现 {riskyWindows.length} 个需要关注的时间窗口
+        共发现 {riskyWindows.length} 个需要关注的时间窗口 (Found {riskyWindows.length} time windows requiring attention)
       </p>
       
       <div className="space-y-3">
@@ -52,7 +52,7 @@ export function DetailedStats() {
                   {window.startDate} ~ {window.endDate}
                 </p>
                 <p className="text-sm">
-                  离境天数: <span className="font-mono font-medium">{window.departureDays}</span> 天
+                  离境天数 (Days Absent): <span className="font-mono font-medium">{window.departureDays}</span> 天 (days)
                 </p>
               </div>
               <div className={cn(
@@ -60,7 +60,7 @@ export function DetailedStats() {
                 window.riskLevel === 'critical' && 'bg-accent/20 text-accent',
                 window.riskLevel === 'warning' && 'bg-primary/20 text-primary'
               )}>
-                {window.riskLevel === 'critical' ? '违规' : '临界'}
+                {window.riskLevel === 'critical' ? '违规 Violation' : '临界 Warning'}
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export function DetailedStats() {
       
       {riskyWindows.length > 10 && (
         <p className="text-xs text-muted-foreground text-center">
-          仅显示前 10 个窗口
+          仅显示前 10 个窗口 (Showing first 10 windows only)
         </p>
       )}
     </div>

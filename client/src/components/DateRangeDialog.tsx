@@ -27,7 +27,7 @@ export function DateRangeDialog() {
 
   const handleSubmit = () => {
     if (!startDate || !endDate) {
-      toast.error('请选择开始和结束日期');
+      toast.error('请选择开始和结束日期 (Please select start and end dates)');
       return;
     }
 
@@ -41,12 +41,12 @@ export function DateRangeDialog() {
 
     // 验证日期范围
     if (start > end) {
-      toast.error('开始日期不能晚于结束日期');
+      toast.error('开始日期不能晚于结束日期 (Start date cannot be later than end date)');
       return;
     }
 
     if (start < arrival) {
-      toast.error('离境日期不能早于抵达日期');
+      toast.error('离境日期不能早于抵达日期 (Departure date cannot be earlier than arrival date)');
       return;
     }
 
@@ -96,21 +96,23 @@ export function DateRangeDialog() {
           className="text-xs"
         >
           <Calendar className="w-3 h-3 mr-2" />
-          批量标记
+          批量标记 Batch Mark
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-lg font-medium">批量标记离境时间段</DialogTitle>
+          <DialogTitle className="text-lg font-medium">批量标记离境时间段 (Batch Mark Departure Period)</DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
             选择连续的离境开始和结束日期,系统将自动标记该时间段内的所有日期
+            <br />
+            Select continuous departure start and end dates, the system will automatically mark all dates within this period
           </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-6 py-4">
           <div className="space-y-2">
             <Label htmlFor="start-date" className="text-sm font-normal">
-              离境开始日期
+              离境开始日期 (Departure Start Date)
             </Label>
             <input
               id="start-date"
@@ -125,7 +127,7 @@ export function DateRangeDialog() {
 
           <div className="space-y-2">
             <Label htmlFor="end-date" className="text-sm font-normal">
-              离境结束日期
+              离境结束日期 (Departure End Date)
             </Label>
             <input
               id="end-date"
@@ -142,7 +144,7 @@ export function DateRangeDialog() {
             <div className="p-3 bg-muted/50 border border-border text-sm text-muted-foreground">
               将标记 <span className="font-medium text-foreground">
                 {Math.floor((parseDate(endDate).getTime() - parseDate(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1}
-              </span> 天为离境日期
+              </span> 天为离境日期 (Will mark {Math.floor((parseDate(endDate).getTime() - parseDate(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1} days as departed)
             </div>
           )}
         </div>
@@ -153,14 +155,14 @@ export function DateRangeDialog() {
             onClick={() => setOpen(false)}
             className="text-xs"
           >
-            取消
+            取消 Cancel
           </Button>
           <Button
             onClick={handleSubmit}
             disabled={!startDate || !endDate}
             className="text-xs"
           >
-            确认标记
+            确认标记 Confirm
           </Button>
         </div>
       </DialogContent>
