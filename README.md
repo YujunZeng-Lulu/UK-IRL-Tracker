@@ -35,38 +35,6 @@ Getting started is incredibly simple:
 
 Bookmark the site for easy access and check your status anytime!
 
-## 🛠️ Tech Stack
-
-This project is built with a modern, robust technology stack:
-
-- **Frontend**: [React](https://reactjs.org/), [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)
-- **State Management & Forms**: [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/)
-- **UI Components**: [Radix UI](https://www.radix-ui.com/), [Recharts](https://recharts.org/), [React Day Picker](https://react-day-picker.js.org/)
-- **Backend**: [Express.js](https://expressjs.com/)
-
-## 💻 Getting Started for Developers
-
-Interested in contributing or running the project locally? Follow these steps:
-
-1.  **Clone the repository:**
-    ```bash
-    gh repo clone YujunZeng-Lulu/UK-IRL-Tracker
-    cd UK-IRL-Tracker
-    ```
-
-2.  **Install dependencies:**
-    This project uses `pnpm` as the package manager.
-    ```bash
-    pnpm install
-    ```
-
-3.  **Run the development server:**
-    ```bash
-    pnpm dev
-    ```
-    The application will be available at `http://localhost:5173`.
-
 ## 🤝 Contributing
 
 Feedback and contributions are welcome! If you have suggestions for improvement or want to report a bug, please feel free to open an issue or submit a pull request.
