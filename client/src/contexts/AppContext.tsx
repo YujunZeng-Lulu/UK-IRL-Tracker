@@ -12,6 +12,12 @@ import {
   markInitialized,
   clearAllData,
 } from '@/lib/storage';
+import {
+  getPreviousDay,
+  getNextDay,
+  daysBetween,
+  getDateRange,
+} from '@/lib/dateUtils';
 import type { AppState, UserConfig, DeparturePeriod } from '@/../../shared/types';
 
 interface AppContextType {
@@ -37,36 +43,112 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setState(prev => ({ ...prev, config }));
   };
 
-  // 切换离境状态
+  // 切换离境状态(支持智能聚合)
   const toggleDeparture = (date: string) => {
     const newDepartures = { ...state.departures };
     let newPeriods = [...state.departurePeriods];
     
     if (newDepartures[date]) {
-      // 取消标记:删除日期标记和对应的单日离境时间段
+      // 取消标记:需要处理时间段拆分
       delete newDepartures[date];
       
-      // 查找并删除包含此日期的单日离境时间段
-      const periodToDelete = newPeriods.find(
-        p => p.startDate === date && p.endDate === date
+      // 查找包含此日期的时间段
+      const periodIndex = newPeriods.findIndex(
+        p => date >= p.startDate && date <= p.endDate
       );
-      if (periodToDelete) {
-        newPeriods = newPeriods.filter(p => p.id !== periodToDelete.id);
+      
+      if (periodIndex !== -1) {
+        const period = newPeriods[periodIndex];
+        
+        if (period.startDate === date && period.endDate === date) {
+          // 场景1: 单日记录,直接删除
+          newPeriods.splice(periodIndex, 1);
+        } else if (period.startDate === date) {
+          // 场景2: 取消起始日,缩短时间段
+          const newStartDate = getNextDay(date);
+          newPeriods[periodIndex] = {
+            ...period,
+            startDate: newStartDate,
+            days: daysBetween(newStartDate, period.endDate),
+          };
+        } else if (period.endDate === date) {
+          // 场景3: 取消结束日,缩短时间段
+          const newEndDate = getPreviousDay(date);
+          newPeriods[periodIndex] = {
+            ...period,
+            endDate: newEndDate,
+            days: daysBetween(period.startDate, newEndDate),
+          };
+        } else {
+          // 场景4: 取消中间日,拆分为两个时间段
+          const period1EndDate = getPreviousDay(date);
+          const period2StartDate = getNextDay(date);
+          
+          newPeriods[periodIndex] = {
+            ...period,
+            endDate: period1EndDate,
+            days: daysBetween(period.startDate, period1EndDate),
+          };
+          
+          newPeriods.push({
+            id: `split-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+            startDate: period2StartDate,
+            endDate: period.endDate,
+            days: daysBetween(period2StartDate, period.endDate),
+            createdAt: new Date().toISOString(),
+          });
+        }
       }
     } else {
-      // 标记:添加日期标记并创建单日离境时间段
+      // 标记:检查是否可以与现有时间段合并
       newDepartures[date] = true;
       
-      // 创建单日离境时间段
-      const newPeriod: DeparturePeriod = {
-        id: `single-${date}-${Date.now()}`,
-        startDate: date,
-        endDate: date,
-        days: 1,
-        createdAt: new Date().toISOString(),
-      };
+      const prevDay = getPreviousDay(date);
+      const nextDay = getNextDay(date);
       
-      newPeriods.push(newPeriod);
+      // 查找与前一天或后一天相邻的时间段
+      const prevPeriodIndex = newPeriods.findIndex(p => p.endDate === prevDay);
+      const nextPeriodIndex = newPeriods.findIndex(p => p.startDate === nextDay);
+      
+      if (prevPeriodIndex !== -1 && nextPeriodIndex !== -1) {
+        // 场景1: 连接两个时间段,合并为一个大时间段
+        const prevPeriod = newPeriods[prevPeriodIndex];
+        const nextPeriod = newPeriods[nextPeriodIndex];
+        
+        newPeriods[prevPeriodIndex] = {
+          ...prevPeriod,
+          endDate: nextPeriod.endDate,
+          days: daysBetween(prevPeriod.startDate, nextPeriod.endDate),
+        };
+        
+        // 删除被合并的后一个时间段
+        newPeriods.splice(nextPeriodIndex, 1);
+      } else if (prevPeriodIndex !== -1) {
+        // 场景2: 扩展前一个时间段
+        const prevPeriod = newPeriods[prevPeriodIndex];
+        newPeriods[prevPeriodIndex] = {
+          ...prevPeriod,
+          endDate: date,
+          days: daysBetween(prevPeriod.startDate, date),
+        };
+      } else if (nextPeriodIndex !== -1) {
+        // 场景3: 扩展后一个时间段
+        const nextPeriod = newPeriods[nextPeriodIndex];
+        newPeriods[nextPeriodIndex] = {
+          ...nextPeriod,
+          startDate: date,
+          days: daysBetween(date, nextPeriod.endDate),
+        };
+      } else {
+        // 场景4: 创建新的单日记录
+        newPeriods.push({
+          id: `single-${date}-${Date.now()}`,
+          startDate: date,
+          endDate: date,
+          days: 1,
+          createdAt: new Date().toISOString(),
+        });
+      }
     }
     
     // 一次性更新所有状态
