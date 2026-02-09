@@ -64,7 +64,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   // 标记初始化完成
   const initialize = () => {
     markInitialized();
-    setState(prev => ({ ...prev, initialized: true }));
+    setState(prev => ({ ...prev, isInitialized: true }));
   };
 
   // 重置所有数据
