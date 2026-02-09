@@ -6,9 +6,9 @@
 import type { UserConfig, AppState } from '@/../../shared/types';
 
 const STORAGE_KEYS = {
-  CONFIG: 'ilr_tracker_config',
-  DEPARTURES: 'ilr_tracker_departures',
-  INITIALIZED: 'ilr_tracker_initialized'
+  CONFIG: 'ilr-tracker-config',
+  DEPARTURES: 'ilr-tracker-departures',
+  INITIALIZED: 'ilr-tracker-initialized'
 } as const;
 
 /**

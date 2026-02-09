@@ -37,8 +37,8 @@ export default function Welcome() {
         backgroundPosition: 'center'
       }}
     >
-      <div className="w-full max-w-md">
-        <div className="bg-card/95 backdrop-blur-sm border border-border p-12 space-y-8">
+        <div className="w-full max-w-md">
+        <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }} className="bg-card/95 backdrop-blur-sm border border-border p-12 space-y-8">
           <div className="space-y-3 text-center">
             <h1 className="text-3xl font-medium text-foreground">
               英国永居离境追踪
@@ -93,14 +93,13 @@ export default function Welcome() {
             </div>
           </div>
 
-          <Button
-            type="button"
-            onClick={handleSubmit}
+          <button
+            type="submit"
             disabled={!arrivalDate}
-            className="w-full py-6 text-base font-normal transition-all duration-500 hover:opacity-80"
+            className="w-full py-6 text-base font-normal transition-all duration-500 hover:opacity-80 bg-primary text-primary-foreground disabled:opacity-50 disabled:cursor-not-allowed"
           >
             开始追踪 Start Tracking
-          </Button>
+          </button>
 
           <div className="pt-4 border-t border-border">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
@@ -108,7 +107,7 @@ export default function Welcome() {
               无需注册,完全离线可用 (No registration, works offline)
             </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
