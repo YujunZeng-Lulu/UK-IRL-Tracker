@@ -1,104 +1,103 @@
-# CBAIA 中英美投资人路边谈话：主持稿
+# CBAIA 中英美投资人路边谈话：主持稿 (v2.0)
 
 **活动主题:** 探索全球机遇：不同市场投融资的异同及对海外华人创业者的建议
 **主持人:** [请填写您的姓名]
-**总时长:** 约85分钟 (开场+圆桌+Q&A+结束语)
+**语言:** 中文为主
 
 ---
 
-### **第一部分: 开场欢迎 (18:25 - 18:30, 5分钟)**
+### **第一部分: 开场 (15:25 - 15:30, 5分钟)**
 
-**(中英双语)**
+**(主持人注意：请以真诚、有共鸣的语气开场)**
 
-"Good evening, everyone, both here in London and joining us online from around the world. Welcome! 各位线下的朋友，以及全球线上参与的创业者们，大家晚上好！"
+“现场的各位朋友，以及通过腾讯会议在全球各地加入我们的创业者们，大家下午好！/ 晚上好！”
 
-"My name is [您的姓名], and I am thrilled to be your host for tonight’s event, hosted by the China-Britain Artificial Intelligence Association, or CBAIA. 我是今晚的主持人[您的姓名]，非常荣幸能代表中英人工智能协会（CBAIA）欢迎各位的到来。"
+“我是今天的主持人[您的姓名]。在活动正式开始前，我想先分享一下我组织这场活动的初衷。在和很多海外华人创业者朋友交流的过程中，我发现一个非常普遍的痛点：我们很多人，带着技术、想法和团队，满怀激情地在全球市场打拼，但一到融资这个关键节点，就常常感到迷茫——我的项目，究竟应该去哪里找钱？是该专注本地市场，还是应该放眼全球？美国、英国、中国的资本市场，它们的‘游戏规则’到底有什么不同？投资人看待我们这些有中国背景的创始团队，视角又有什么特别之处？”
 
-"CBAIA is a non-profit organization dedicated to building a vibrant community for AI professionals, researchers, and entrepreneurs, fostering collaboration and innovation between China and the UK. CBAIA作为一个非营利组织，一直致力于为中英两国的AI领域的专家、学者和创业者们，搭建一个充满活力的交流与合作社区。"
+“这些问题，不仅仅是挑战，更是我们这一代全球化华人创业者必须面对的课题。正是为了解答这些困惑，为了搭建一个真正能帮到大家的平台，我们CBAIA（中英人工智能协会）策划了今天的这场活动。”
 
-"Tonight, we are incredibly fortunate to bring together a distinguished panel of investors from three of the world’s most dynamic venture capital markets: China, the UK, and the US. Our theme is ‘Global Opportunities: A Fireside Chat on Cross-Market Investing and Advice for Global Chinese Entrepreneurs.’ We’ll be diving deep into the nuances of fundraising in these different ecosystems and gathering invaluable advice for all of you who are building the next generation of global companies."
+“我们希望通过连接中、英、美三个核心资本市场的顶尖投资人，为大家带来最一线、最真实的洞察。我们不仅要探讨不同市场的异同，更要为在座的每一位，提供切实可行的建议和路径。这不仅是一场分享会，更是一个链接的开始。”
 
-"今晚，我们非常荣幸地邀请到了来自中、英、美三个全球最具活力的资本市场的顶尖投资人。我们将共同探讨‘全球机遇’这一主题，深入了解不同市场的投融资异同，并为在座以及线上的每一位全球华人创业者，提供最宝贵的实战建议。"
+“所以，话不多说，让我们隆重介绍今晚将为我们指点迷津的嘉宾们。”
 
-"So, without further ado, let me introduce our esteemed guests."
+* **[主持人注意: 逐一介绍每位嘉宾，用中文，强调其所在市场和专长领域]**
 
-* **[主持人注意: 逐一介绍每位嘉宾。请根据Luma页面上的简介，用15-20秒简要介绍每位的背景和亮点。介绍顺序建议: Aitian Li (代表英国), Siyuan (Cheryl) Liang (代表美国), Chong Liu (代表中国), 最后介绍 Sharp (如果出席)]**
+1.  “首先，为我们带来英国本土投资视角的是，来自**Calculus Capital的投资经理 Aitian Li**！Aitian在英国有丰富的投资经验，并且拥有牛津MBA背景，非常熟悉英国的创业生态。欢迎Aitian！”
+2.  “接下来，代表全球AI及软件投资顶尖水平的，是来自**Vertex Ventures的执行董事 Sharp**！Sharp曾任职于红杉资本，主导和参与了多家独角兽的成长，他的全球化视野将给我们带来非常宝贵的启发。欢迎Sharp！”
+3.  “然后，为我们带来美国和日本市场洞察的是，来自**SBI Holdings USA的投资负责人 Siyuan (Cheryl) Liang**！Cheryl自己也曾是创业者，转型投资人后专注于AI和深科技领域，她的双重身份能给我们提供独特的共鸣和见解。欢迎Cheryl！”
+4.  *（如果Chong出席）* “最后，我们还有来自中国顶尖投资机构**高瓴投资的Chong Liu**！Chong同样拥有创业者和投资人的双重背景，并且是剑桥的工程学博士，对前沿科技有着深刻的理解。欢迎Chong！”
 
-1.  "First, representing the UK market, we have **Aitian Li**, Investment Associate at Calculus Capital... Welcome, Aitian!"
-2.  "Next, joining us with a perspective from the US and Japan, please welcome **Siyuan (Cheryl) Liang**, Investment Principal at SBI Holdings USA... Welcome, Cheryl!"
-3.  "And representing the view from China’s vibrant tech scene, we have **Chong Liu**, Investor at the renowned Hillhouse Investment... Welcome, Chong!"
-4.  *（如果Sharp出席）* "And we are also delighted to have **Sharp**, Executive Director at Vertex Ventures, who brings a global perspective on AI and software investing... Welcome, Sharp!"
+*（如果Chong不出席）* “我们同样也收到了来自高瓴投资的Chong Liu的问候，他因为个人原因今天无法来到现场，但他也预祝我们活动圆满成功。”
 
-"A huge thank you to all our speakers for joining us tonight. 让我们再次以热烈的掌声欢迎各位嘉宾！"
-
----
-
-### **第二部分: 圆桌论坛 (18:30 - 19:15, 45分钟)**
-
-* **[主持人注意: 控制好时间，每个大问题模块约12-15分钟。根据现场气氛和嘉宾回答的深度，可以追问1-2个小问题。]**
-
-#### **模块一: 宏观视角 - 三地市场的“不同画风” (约15分钟)**
-
-**Question 1 (for all):**
-"Let's start with the big picture. From your experience, what are the most significant differences you've observed in the early-stage investment ecosystems of China, the UK, and the US? Perhaps you could touch upon aspects like valuation, the speed of deal-making, or the level of hands-on support investors provide post-investment."
-"我们先从一个宏观的问题开始。根据您的经验，您观察到在中国、英国和美国的早期投资生态中，最显著的差异是什么？也许可以从**估值逻辑、投资决策速度、或投后支持的深度**这些方面来谈谈。"
-
-* **[追问思路]**
-    *   **To Aitian (UK):** "Aitian, Calculus Capital is a veteran in the UK market. Is the investment pace here generally more measured compared to the US? What defines a ‘good’ company from a UK investor's standpoint?"
-    *   **To Cheryl (US):** "Cheryl, Silicon Valley is known for its ‘go big or go home’ mentality. How does that translate into valuations and growth expectations for early-stage companies you see?"
-    *   **To Chong (China):** "Chong, the Chinese market is famous for its rapid iteration and intense competition. How does this environment shape the investment strategies at a firm like Hillhouse?"
-
-#### **模块二: 创业者策略 - 给海外华人的“真心话” (约15分钟)**
-
-**Question 2 (for all):**
-"Now let's turn our focus to the entrepreneurs in our audience. Many of them are Chinese founders building companies globally. What is the single most common challenge or pitfall you see them encounter, and what is your number one piece of advice for them?"
-"现在让我们聚焦在今天在场的创业者们。他们中许多人是正在全球市场打拼的华人创始人。您认为他们最常遇到的一个挑战或陷阱是什么？以及您最想给他们的、最核心的一条建议又是什么？"
-
-* **[追问思路]**
-    *   **To Chong & Cheryl (as former founders):** "Both of you have been on the other side of the table as founders. From that unique perspective, how crucial is it for a Chinese founder overseas to build a culturally diverse team from day one? How do you suggest they bridge the cultural gap when pitching to Western investors?"
-    *   **To Aitian (UK focus):** "Aitian, for a Chinese entrepreneur targeting the UK market, how important is it to have local co-founders or senior team members? What’s the best way to navigate the local legal and business landscape?"
-
-#### **模块三: 赛道与未来 - 寻找下一个“黄金交叉点” (约15分钟)**
-
-**Question 3 (for all):**
-"Looking forward, which specific sectors or technologies do you believe hold the most promise for cross-border investment and collaboration between China, the UK, and the US? Where do you see the next big opportunity for a global-minded entrepreneur?"
-"展望未来，您认为哪些具体的行业或技术，在中、英、美之间的跨境投资与合作方面，拥有最大的潜力？您觉得下一个属于全球化创业者的巨大机遇会出现在哪里？"
-
-* **[追问思路]**
-    *   "Are there any ‘hot’ areas like AI, Fintech, or Climate Tech where you see unique synergies between the markets? For example, leveraging UK's research, US's market scale, and China's supply chain?"
-    *   "How has the global geopolitical climate affected your cross-border investment thesis? Are you becoming more cautious, or are you finding new, overlooked opportunities?"
+“让我们再次以热烈的掌声欢迎各位嘉宾的到来！”
 
 ---
 
-### **第三部分: 互动问答 (Q&A) (19:15 - 19:45, 30分钟)**
+### **第二部分: 现场互动 (穿插在开场后)**
 
-"Thank you all for those incredible insights. Now, we’d like to open up the floor to our audience. We have 30 minutes for Q&A. For our friends online, please type your questions into the chat box, and our volunteer will collect them. For everyone here in the room, please raise your hand, and we’ll bring a microphone to you. Please keep your question concise and state your name and company."
+“在我们的圆桌讨论开始之前，我想先和在场以及线上的朋友们做一个小小的互动。我想了解一下，今天我们的观众里：”
 
-"非常感谢各位嘉宾的精彩分享。接下来是我们的问答环节，有30分钟的时间。线上的朋友，请把你的问题输入聊天框，我们的志愿者会进行收集。现场的朋友，请举手示意，我们会把麦克风递给您。提问时，请尽量简洁，并报一下您的名字和公司。"
+“**有多少朋友目前正在积极为自己的项目融资？** 如果是的话，可以举一下手或者在线上打个‘1’吗？…… 哇，不少啊！看来大家都是带着明确的目标来的。”
+
+“那第二个问题，**有多少朋友在过去已经成功融到过至少一轮资金？** 也请举手示意一下或者打个‘2’。…… 非常棒！我们这里既有经验丰富的‘老兵’，也有即将踏上征途的‘新兵’。这恰恰是最好的交流氛围。”
+
+“这个小调查也让我们嘉宾对今天的观众画像有了更直观的了解。相信大家今天都能满载而归。也请各位记住今天台上的各位投资人，他们分别代表了不同市场的资金和机会，如果你的项目和他们的领域匹配，**请一定不要犹豫，主动去链接**！”
+
+---
+
+### **第三部分: 圆桌论坛 (15:30 - 16:15, 45分钟)**
+
+#### **模块一: 市场差异 - “钱”在哪，风格有何不同？ (约15分钟)**
+
+**问题1:**
+“我们直接切入正题。对于一个早期华人创业项目，在选择融资地点时，中、英、美这三个市场各自最吸引人的地方是什么？反之，最大的挑战或者说‘水土不服’的地方又可能是什么？请各位嘉宾从你们所代表的市场出发，给我们一些直观的比较。”
+
+* **[追问思路]**
+    *   **To Aitian (UK):** “英国市场以其稳健和深厚的学术研究基础著称，对于技术驱动型的公司，在英国融资的关键成功要素是什么？相比美国，投资人对回报周期的期待是否更长？”
+    *   **To Sharp (全球/中国):** “Vertex的全球网络非常强大。您觉得一个在海外创立的华人项目，如果想拿来自中国背景的基金的钱，最大的优势是什么？反过来，他们需要克服哪些常见的沟通或认知障碍？”
+    *   **To Cheryl (US):** “美国市场钱多、机会多，但竞争也最激烈。一个华人团队要在美国成功融资，除了技术和商业模式本身，您认为最重要的‘软实力’是什么？是讲故事的能力，还是建立人脉网络的能力？”
+
+#### **模块二: 投资人视角 - 我们到底在看什么？ (约15分钟)**
+
+**问题2:**
+“当你们看到一个海外华人创始团队的项目时，除了商业计划书上的内容，你们会特别关注或者说‘尽职调查’哪些方面？有没有一些因为文化背景差异而产生的‘加分项’或者‘减分项’？”
+
+* **[追问思路]**
+    *   “比如，创始团队的股权结构、核心成员的背景多元化、或者创始人对目标市场法律税务的理解程度，这些因素在你们的决策中占多大比重？”
+    *   **To Cheryl & Chong (前创业者):** “作为过来人，你们觉得创始人在路演时，最容易犯的、但自己却意识不到的错误是什么？”
+
+#### **模块三: 未来机遇 - 华人创业者的独特优势 (约15分钟)**
+
+**问题3:**
+“展望未来2-3年，结合当前的全球宏观环境，你们认为在哪些赛道上，华人创业者最有可能发挥自己的独特优势，实现‘跨国套利’或者说建立起真正的全球竞争力？比如AI应用、Fintech、生命科学等等。”
+
+* **[追问思路]**
+    *   “这种优势可能来源于对中国供应链的理解、连接东西方市场的能力，还是我们华人固有的某些特质？您能否给出一个具体的例子？”
+    *   “对于想在这些领域创业的朋友，您建议他们应该如何从第一天起就构建自己的全球化基因？”
+
+---
+
+### **第四部分: 互动问答 (Q&A) (16:15 - 16:45, 30分钟)**
+
+“非常感谢各位嘉宾坦诚而深刻的分享。信息量非常大，我相信大家一定有很多问题。接下来的30分钟，我们交给现场和线上的观众。”
+
+“线上的朋友，请直接在腾讯会议的聊天区打出你的问题，我们的志愿者会整理好交给我。现场的朋友，请举手示意，我们会把麦克风递给您。提问时，请您简单介绍一下自己和您的项目，然后直接提出您最关心的问题。”
 
 * **[主持人注意]**
-    *   与志愿者C紧密配合，从线上收集1-2个好问题开始，给线下观众一些思考时间。
-    *   平衡线上和线下的提问机会。
-    *   如果问题集中在某位嘉宾，可以主动引导：“That’s a great question. Aitian, would you like to start, and perhaps Cheryl or Chong could add their thoughts?”
-    *   如果出现冷场，可以准备1-2个备用问题，例如：“A question we often hear is about building a board of advisors. How early should a startup think about this, and what kind of advisors are most valuable?”
-    *   在25分钟左右时提醒：“We have time for one or two more questions.”
+    *   优先选择和讨论主题强相关、能引发深度思考的问题。
+    *   灵活分配给不同嘉宾回答，也可以邀请其他嘉宾补充。
+    *   在时间快到时提醒：“我们还有最后两个问题的机会。”
 
 ---
 
-### **第四部分: 结束语 (19:45 - 19:50, 5分钟)**
+### **第五部分: 结束语 (16:45 - 16:50, 5分钟)**
 
-"What a fantastic discussion. Unfortunately, that’s all the time we have for questions. Please join me in giving another huge round of applause to our incredible speakers: Aitian Li, Siyuan (Cheryl) Liang, and Chong Liu!"
+“天下没有不散的筵席，我们的圆桌讨论和问答环节马上就要结束了。我相信，今晚的对话只是一个开始，一个思想碰撞和机遇链接的开始。请大家再次用最热烈的掌声，感谢Aitian, Sharp, Cheryl (以及Chong)带给我们的宝贵分享！”
 
-"非常感谢，多么精彩的一场对话！时间关系，我们的问答环节就到这里。请大家再次用热烈的掌声，感谢我们的嘉宾 Aitian, Cheryl, 和 Chong！"
+“在大家奔赴我们的线下交流环节之前，有几件重要的事情通知一下：”
 
-"I hope you’ve all found this session as insightful as I have. A few quick announcements before we move to networking:"
+1.  “第一，为了让今天的讨论能够延续，我们为大家建立了一个活动专属微信群。现在屏幕上是群二维码，请大家拿出手机扫码加入。我们会在群里分享今天活动的录像回放，以及更多有价值的资源。”
+2.  “第二，也是最重要的，我们今天邀请到的各位投资人，他们代表着实实在在的资本和机会。活动结束后，我们会将经过大家授权的创业者名单发送给各位嘉宾。请大家务必抓住机会，无论是线下交流还是后续的邮件联系，主动去展示你的项目。”
+3.  “对于在伦敦现场的朋友们，真正的‘路边谈话’现在才正式开始！我们在场地后方为大家准备了茶点，请大家移步，与我们的嘉宾、与你身边的未来合作伙伴，进行更轻松、更深入的交流。”
 
-"希望今晚的分享对大家都有所启发。在进入交流环节前，有几点后续安排想通知大家："
-
-1.  "We will be creating a WeChat group for tonight’s attendees. The QR code will be displayed on the screen shortly. This will be a great way to continue the conversation and connect with fellow entrepreneurs. 我们会为本次活动的参与者建立一个微信群，二维码稍后会显示在屏幕上，方便大家继续交流、链接资源。"
-2.  "We will also be sharing the list of registered entrepreneurs with our guest speakers to facilitate further connections. 我们也会将报名参会的创业者名单整理好，分享给我们的嘉宾，方便后续的联系。"
-3.  "For those of you here in London, we now invite you to join us for an hour of networking. Drinks and refreshments are served at the back. This is a perfect chance to connect with our speakers and each other directly. 对于在伦敦现场的朋友们，我们诚挚地邀请您参与接下来一个小时的线下交流环节，我们准备了茶点，希望能帮助您更好地与我们的嘉宾和同行们建立联系。"
-
-"Once again, thank you all for coming. Thank you to CBAIA for organizing, and a special thanks to our volunteers. Have a wonderful evening!"
-
-"再次感谢大家的到来！感谢CBAIA的组织，也感谢我们志愿者的辛勤付出。祝大家有一个愉快的夜晚！"
+“最后，再次感谢大家的参与！感谢CBAIA的精心组织，感谢所有志愿者的辛勤付出！祝大家今晚收获满满，前程似锦！活动正式结束，线下交流现在开始！”
